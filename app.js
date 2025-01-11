@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -9,11 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/gcr', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-//   useFindAndModify: false,
-}).then(() => console.log('MongoDB connected'))
+mongoose.connect(`${process.env.MONGODB_URI}/${process.env.MONGOBD_NAME}`)
+  .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
