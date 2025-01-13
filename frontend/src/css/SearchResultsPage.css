@@ -1,0 +1,86 @@
+/* SearchResultsPage.css */
+
+/* Main Container */
+.search-results-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  /* Heading */
+  .search-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* No Results Message */
+  .no-results {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Product Grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  /* Product Card */
+  .product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Product Image */
+  .product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Product Name */
+  .product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #005c99;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  
+    .product-image {
+      height: 150px;
+    }
+  }
+  
+  .product-card a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Ensure text color remains consistent */
+  }
+  
+  .product-card a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+  }
+  

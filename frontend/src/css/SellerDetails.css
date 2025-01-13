@@ -1,0 +1,59 @@
+/* SellerDetails.css */
+.seller-details {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .seller-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .seller-summary h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .mrp {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  .discount {
+    color: #ff5722;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  button {
+    background-color: #005c99;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #004577;
+  }
+  
+  .seller-details-expanded {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+  }
+  

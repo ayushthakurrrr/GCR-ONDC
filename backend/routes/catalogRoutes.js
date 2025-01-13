@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
         product_id,
         name,
         description,
+        mrp,
         category_id,
         attributes,
         tags,

@@ -10,6 +10,7 @@ const ProductSchema = new mongoose.Schema({
   product_id: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   description: { type: String },
+  mrp: { type: Number, required: true },
   category_id: { type: String, required: true },
   attributes: { type: Object }, // Dynamic attributes
   tags: [String],
