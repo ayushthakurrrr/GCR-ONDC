@@ -1,4 +1,4 @@
-/* ProductPage.css */
+/* ProductPage.css
 .product-page {
   display: flex;
   max-width: 1200px;
@@ -53,4 +53,86 @@
 .product-right h3 {
   color: #005c99;
   margin-bottom: 10px;
+} */
+
+
+/* ProductPage.css */
+.product-page {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 60px); /* Adjust height based on header */
+}
+
+/* Left and Right sections with individual scrollbars */
+.product-left,
+.product-right {
+  width: 50%;
+  padding: 20px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Styling the scrollbar */
+.product-left::-webkit-scrollbar,
+.product-right::-webkit-scrollbar {
+  width: 8px;
+}
+
+.product-left::-webkit-scrollbar-thumb,
+.product-right::-webkit-scrollbar-thumb {
+  background-color: #dfeef8;
+  border-radius: 4px;
+}
+
+.product-left::-webkit-scrollbar-track,
+.product-right::-webkit-scrollbar-track {
+  /* background-color: #fffcfc; */
+}
+
+/* Hover effect for scrollbar */
+.product-left::-webkit-scrollbar-thumb:hover,
+.product-right::-webkit-scrollbar-thumb:hover {
+  background-color: #004577;
+}
+
+/* Product Images Styling */
+.product-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Info */
+.product-info h2 {
+  color: #005c99;
+  margin-bottom: 10px;
+}
+
+.attribute-section {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attribute-section h4 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.product-right h3 {
+  color: #005c99;
+  margin-bottom: 10px;
+}
+
+
+.attribute-section ul li {
+  list-style: none;
 }

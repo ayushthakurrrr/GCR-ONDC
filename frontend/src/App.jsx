@@ -5,6 +5,8 @@ import ProductPage from './pages/ProductPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import PaymentPage from './pages/PaymentPage';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/search" element={<SearchResultsPage />} />
         <Route path="/payment/:productId" element={<PaymentPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

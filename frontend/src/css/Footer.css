@@ -1,0 +1,29 @@
+/* Footer.css */
+.footer {
+    background-color: #535151;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    border-top: 2px solid #b0b0b0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .teamName{
+    font-size: 24px;
+    color: #0099ff;
+    font-weight: bold;
+  }
+  .footer p {
+    margin: 5px 0;
+    line-height: 1.4;
+  }
+  
+  .footer strong {
+    color: white;
+    font-weight: bold;
+  }
+  

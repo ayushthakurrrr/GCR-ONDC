@@ -52,8 +52,10 @@
   .product-image {
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    /* object-fit: cover; */
+    object-fit: contain;
     border-bottom: 1px solid #ddd;
+
   }
   
   /* Product Name */

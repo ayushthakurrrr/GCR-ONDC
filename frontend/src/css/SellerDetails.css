@@ -1,59 +1,137 @@
 /* SellerDetails.css */
 .seller-details {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.seller-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seller-summary h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.discount {
+  color: #ff5722;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.seller-pricing {
+  margin: 8px 0;
+}
+
+.seller-pricing p {
+  font-size: 16px;
+  color: #333;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.explore-button {
+  margin-top: 10px;
+}
+
+.explore-button button {
+  background-color: #005c99;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.explore-button button:hover {
+  background-color: #004577;
+}
+
+.seller-details-expanded {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.availability {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.available {
+  color: #4caf50; /* Green for Available */
+}
+
+.not-available {
+  color: #f44336; /* Red for Not Available */
+}
+
+/* Buy Buttons */
+.buy-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.buy-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  /* padding: 10px 15px; */
+  padding: 9px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-button:hover {
+  background-color: #e64a19;
+}
+
+/* Pop-Up Notification */
+.popup-notification {
+  position: fixed;
+  top: 95px;
+  right: 0%;
+  transform: translateX(-50%);
+  background-color: #005c99;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeInOut 6s ease-in-out;
+  z-index: 1000;
+}
+
+/* Pop-Up Animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) translateX(-50%);
   }
-  
-  .seller-summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  10% {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
   }
-  
-  .seller-summary h4 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
+  90% {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
   }
-  
-  .price {
-    font-size: 20px;
-    font-weight: bold;
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) translateX(-50%);
   }
-  
-  .mrp {
-    text-decoration: line-through;
-    color: #999;
-    margin-right: 10px;
-  }
-  
-  .discount {
-    color: #ff5722;
-    font-size: 14px;
-    margin-left: 5px;
-  }
-  
-  button {
-    background-color: #005c99;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  button:hover {
-    background-color: #004577;
-  }
-  
-  .seller-details-expanded {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
-  }
-  
+}
