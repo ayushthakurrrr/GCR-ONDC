@@ -24,7 +24,7 @@ function SearchResultsPage() {
 
     setLoading(true);
     axios
-      .get('/api/products/search', { params: { name, category } })
+      .get('https://gcr-ondc-backend.vercel.app/api/products/search', { params: { name, category } })
       .then((response) => {
         if (Array.isArray(response.data)) {
           setProducts(response.data);
