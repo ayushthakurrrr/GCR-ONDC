@@ -26,5 +26,4 @@ app.use('/api/products', catalogRoutes);
 app.use('/api/sellers', sellerRoutes);
 
 // Start the Server
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`));

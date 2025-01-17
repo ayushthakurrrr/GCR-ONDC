@@ -1,16 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// function Navbar() {
-//   return (
-//     <nav>
-//       <h1>GCR Prototype</h1>
-//       <Link to="/">Home</Link>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Navbar.css'; // Import the CSS for styling

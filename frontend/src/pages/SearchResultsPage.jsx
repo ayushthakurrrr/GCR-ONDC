@@ -69,7 +69,7 @@ function SearchResultsPage() {
                   src={
                     product.images && product.images.length > 0
                       ? product.images[0]
-                      : 'https://via.placeholder.com/150'
+                      : 'https://res.cloudinary.com/dyybjybnc/image/upload/v1737141053/ajztsqlue7nr4qasebji.jpg'
                   }
                   alt={product.name}
                   className="product-image"
