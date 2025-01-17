@@ -39,31 +39,47 @@ function SearchResultsPage() {
       });
   }, [location.search]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // Skeleton Loader
+  const SkeletonLoader = () => (
+    <div className="skeleton-grid">
+      {Array(12)
+        .fill(null)
+        .map((_, index) => (
+          <div key={index} className="skeleton-card">
+            <div className="skeleton-image"></div>
+            <div className="skeleton-text short"></div>
+            <div className="skeleton-text long"></div>
+          </div>
+        ))}
+    </div>
+  );
 
   return (
     <div className="search-results-page">
-      {products.length === 0 && <p className="no-results">No products found.</p>}
-      <div className="product-grid">
-        {products.map((product) => (
-          <div key={product.product_id} className="product-card">
-            <Link to={`/product/${product.product_id}`} state={{ product }}>
-              <img
-                src={
-                  product.images && product.images.length > 0
-                    ? product.images[0]
-                    : 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736951654/orxxiixctsihseqw2kdj.jpg'
-                }
-                alt={product.name}
-                className="product-image"
-              />
-              <h3 className="product-name">{product.name}</h3>
-            </Link>
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <SkeletonLoader />
+      ) : products.length === 0 ? (
+        <p className="no-results">No products found.</p>
+      ) : (
+        <div className="product-grid">
+          {products.map((product) => (
+            <div key={product.product_id} className="product-card">
+              <Link to={`/product/${product.product_id}`} state={{ product }}>
+                <img
+                  src={
+                    product.images && product.images.length > 0
+                      ? product.images[0]
+                      : 'https://via.placeholder.com/150'
+                  }
+                  alt={product.name}
+                  className="product-image"
+                />
+                <h3 className="product-name">{product.name}</h3>
+              </Link>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

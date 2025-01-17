@@ -2,18 +2,65 @@
 .homepage {
     background-color: #f8f9fa;
     color: #333;
-    text-align: center;
+    /* text-align: center; */
     padding: 50px 20px;
   }
   
-  .homepage h1 {
-    color: #005c99;
+  .welcome-text,
+  .explore-text {
     font-size: 36px;
-    margin-bottom: 40px;
+    font-weight: bold;
+    /* margin: 10px 0; */
   }
   
+  .gcr-line {
+    font-size: 36px;
+    font-weight: bold;
+    /* margin: 20px 0; */
+    /* text-transform: uppercase; */
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  .gcr-text {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 25px;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff007f, 0 0 30px #ff007f,
+      0 0 40px #ff007f;
+    transition: background-color 0.25s ease-in-out, transform 0.2s ease-in-out;
+    animation: neon-flicker 1.5s infinite alternate;
+  }
+  
+  .gcr-text:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Neon Flicker Effect */
+  @keyframes neon-flicker {
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff007f,
+        0 0 30px #ff007f, 0 0 40px #ff007f, 0 0 50px #ff007f;
+    }
+    20%,
+    24%,
+    55% {
+      text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 8px #ff007f,
+        0 0 10px #ff007f, 0 0 15px #ff007f, 0 0 20px #ff007f;
+    }
+  }
   .category-block {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
   
   .category-block h2 {

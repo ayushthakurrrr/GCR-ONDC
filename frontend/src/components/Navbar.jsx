@@ -32,7 +32,7 @@ function Navbar() {
       {/* Left Logo - Acts as Home Link */}
       <div className="navbar-logo">
         <Link to="/">
-          <img src="/2-removebg-preview.png" alt="GCR Logo" className="logo" />
+          <img src="/gcr_logo-removebg-preview (1).png" alt="GCR Logo" className="logo" />
         </Link>
       </div>
 

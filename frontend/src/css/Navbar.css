@@ -18,7 +18,7 @@
 }
 
 .logo {
-  width: 70px;
+  /* width: 120px; */
   height: 70px;
   cursor: pointer;
 }
@@ -45,7 +45,7 @@
 
 .navbar-search button {
   background-color: white;
-  color: #005c99;
+  color: #5d6061;
   border: none;
   padding: 12px 20px;
   border-radius: 0 4px 4px 0;
@@ -56,7 +56,7 @@
 }
 
 .navbar-search button:hover {
-  background-color: #004577;
+  background-color: #5d6061;
   color: white;
 }
 

@@ -152,7 +152,7 @@ function HomePage() {
     }, {
       name: 'Technology',
       subcategories: [
-        { name: 'Software Tools', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736953969/ekwnoujoubawmz9rblop.jpg', category_id: 'CAT_PRODUCTIVITY_SOFTWARES' },
+        { name: 'Productivity Tools', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1737031129/oqrkjkgpfcicfgsytw4s.png', category_id: 'CAT_PRODUCTIVITY_SOFTWARES' },
         { name: 'Development', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954558/i3nru5cwiwyp15go1aij.png', category_id: 'CAT_DEVELOPMENT_SOFTWARES' },
         { name: 'Cybersecurity', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954181/kybbjmebppt1ngtbeoti.png', category_id: 'CAT_CYBERSECURITY' },
         { name: 'Cloud Services', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736953969/xfvrqicdlehpegbj3lif.png',category_id: 'CAT_CLOUD_SERVICES ' },
@@ -171,9 +171,8 @@ function HomePage() {
     {
       name: 'Entertainment',
       subcategories: [
-        { name: 'Movies', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954998/rezu1qhwblb3vmfuddiv.jpg', category_id: 'CAT_MOVIES' },
-        { name: 'Music', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954998/udhjinaem3zbrvzbb8ny.png', category_id: 'CAT_MUSIC' },
-        { name: 'Gaming Platforms', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954998/cidpz7e3ue50uxgojg6a.jpg', category_id: 'CAT_GAMING_PLATFORMS' },
+        { name: 'Movies', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954998/rezu1qhwblb3vmfuddiv.jpg', category_id: 'CAT_STREAMING_SERVICES' },
+        { name: 'Music', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954998/udhjinaem3zbrvzbb8ny.png', category_id: 'CAT_STREAMING_MUSIC' },
         { name: 'Audiobooks', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954998/uygyok6q2jtog2kghqgy.png', category_id: 'CAT_STREAMING_AUDIOBOOKS' }
       ],
     }
@@ -187,7 +186,7 @@ function HomePage() {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     arrows: false,
   };
 
@@ -196,9 +195,33 @@ function HomePage() {
     navigate(`/search?category=${category_id}`);
   };
 
+  const [bgColorIndex, setBgColorIndex] = React.useState(0);
+
+  // Dynamic colors for GCR
+  const colors = ['#ff007f', '#00bfff', '#ff4500', '#32cd32', '#ff1493'];
+
+  // Change GCR background color every 0.25 seconds
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setBgColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 250);
+    return () => clearInterval(interval);
+  }, [colors.length]);
   return (
     <div className="homepage">
-      <h1>Welcome, explore the shop more efficiently using GCR</h1>
+     <p className="welcome-text">Welcome !!!</p>
+      <p className="explore-text">Explore the shop,</p>
+      <p className="gcr-line">
+       More efficiently using {' '}
+        <span
+          className="gcr-text"
+          style={{
+            backgroundColor: colors[bgColorIndex], // Dynamic color
+          }}
+        >
+          GCR
+        </span>
+      </p>
 
       {categories.map((category) => (
         <div key={category.name} className="category-block">
