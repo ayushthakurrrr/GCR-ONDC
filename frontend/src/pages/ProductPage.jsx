@@ -291,7 +291,7 @@ function ProductPage() {
             </div>
             <div className="product-info">
               <h2>{product.name}</h2>
-              <p className="">MRP: ₹{product.attributes.mrp}</p>
+              <p className="price">MRP: ₹{product.attributes.mrp}</p>
               <p>{product.description}</p>
 
               {/* AI-Generated Description Box */}

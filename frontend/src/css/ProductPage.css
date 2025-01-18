@@ -11,6 +11,8 @@
 
 .single-attribute{
   margin-left: 9px;
+  margin-top: 12px;
+  font-size: 15px;
 }
 
 /* Left and Right sections with individual scrollbars */
@@ -65,9 +67,16 @@
   margin-bottom: 10px;
 }
 
+.product-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
 .attribute-section {
   margin-top: 15px;
   padding: 10px;
+  font-size: 15px;
+
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -156,6 +165,12 @@
 /* Skeleton Loader for Dynamic Details */
 .dynamic-loader {
   margin-top: 20px;
+}
+
+.price{
+  font-size: 22px;
+  font-weight: 500;
+  /* color: #005c99; */
 }
 
 .seller-placeholder {

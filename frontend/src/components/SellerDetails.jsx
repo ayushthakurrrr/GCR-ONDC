@@ -62,7 +62,7 @@ function SellerDetails({ seller }) {
       {/* Pop-Up Notification */}
       {showPopup && (
         <div className="popup-notification">
-          <p>This was not part of GCR, so not included in the prototype.</p>
+          <p>The feature was not part of GCR, hence not implemented in this prototype.</p>
         </div>
       )}
     </div>
