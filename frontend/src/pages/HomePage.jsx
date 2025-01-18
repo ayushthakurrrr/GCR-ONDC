@@ -67,7 +67,7 @@ function HomePage() {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 750,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
