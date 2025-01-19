@@ -14,6 +14,21 @@ function SellerDetails({ seller }) {
   const availability = seller.stock_quantity > 0 ? 'Available' : 'Not Available';
   const availabilityClass = seller.stock_quantity > 0 ? 'available' : 'not-available';
 
+  // Parse the return window string
+  const parseReturnWindow = (returnWindow) => {
+    const match = /P(\d+)([DH])/i.exec(returnWindow);
+    if (match) {
+      const value = match[1];
+      const unit = match[2].toUpperCase();
+      if (unit === 'D') {
+        return `Within ${value} days of delivery`;
+      } else if (unit === 'H') {
+        return `Within ${value} hours of delivery`;
+      }
+    }
+    return returnWindow; // Return as is if the format is unrecognized
+  };
+
   // Handle pop-up display
   const handlePopup = () => {
     setShowPopup(true);
@@ -49,7 +64,7 @@ function SellerDetails({ seller }) {
           <p><strong>Fulfillment Type:</strong> {seller.fulfillment_details.type}</p>
           <p><strong>Returnable:</strong> {seller.fulfillment_details.returnable ? 'Yes' : 'No'}</p>
           <p><strong>Cancellable:</strong> {seller.fulfillment_details.cancellable ? 'Yes' : 'No'}</p>
-          <p><strong>Return Window:</strong> {seller.fulfillment_details.return_window}</p>
+          <p><strong>Return Window:</strong> {parseReturnWindow(seller.fulfillment_details.return_window)}</p>
 
           {/* Buy Buttons */}
           <div className="buy-buttons">
@@ -70,8 +85,3 @@ function SellerDetails({ seller }) {
 }
 
 export default SellerDetails;
-
-
-
-
-
