@@ -114,6 +114,11 @@
     font-size: 24px;
     z-index: 1;
   }
+
+  /* .slick-track {
+    transition: none;
+  } */
+  
   
   /* Responsive Design */
   @media (max-width: 768px) {

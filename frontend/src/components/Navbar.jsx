@@ -27,7 +27,7 @@ function Navbar() {
       <form className="navbar-search" onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="Search products..."
+          placeholder="Search products by name..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

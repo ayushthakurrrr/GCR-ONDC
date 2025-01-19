@@ -65,15 +65,39 @@ function HomePage() {
 
   // Slider settings
   const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 750,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
+    dots: false, // No navigation dots for simplicity
+    infinite: true, // Continuous loop
+    speed: 5000, // Adjust speed for smooth rolling
+    slidesToShow: 5, // Number of slides visible
+    slidesToScroll: 1, // Scrolls one slide at a time
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 0, // Seamless autoplay
+    arrows: false, // Remove navigation arrows
+    cssEase: "linear", // Smooth motion
+    pauseOnHover: true, // Pauses autoplay when hovering over the slider
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
+  
+  
 
   // Handle category click
   const handleCategoryClick = (category_id) => {
