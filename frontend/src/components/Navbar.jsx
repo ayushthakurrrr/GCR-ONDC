@@ -36,7 +36,7 @@ function Navbar() {
 
       {/* Right Logo */}
       <div className="navbar-logo">
-        <img src="/images-removebg-preview[1].png" alt="Right Logo" className="logo2" />
+        <img src="/ondc 2.png" alt="Right Logo" className="logo2" />
       </div>
     </nav>
   );

@@ -40,7 +40,7 @@ function HomePage() {
         { name: 'Productivity Tools', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1737031129/oqrkjkgpfcicfgsytw4s.png', category_id: 'CAT_PRODUCTIVITY_SOFTWARES' },
         { name: 'Development', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954558/i3nru5cwiwyp15go1aij.png', category_id: 'CAT_DEVELOPMENT_SOFTWARES' },
         { name: 'Cybersecurity', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954181/kybbjmebppt1ngtbeoti.png', category_id: 'CAT_CYBERSECURITY' },
-        { name: 'Cloud Services', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736953969/xfvrqicdlehpegbj3lif.png',category_id: 'CAT_CLOUD_SERVICES ' },
+        { name: 'Cloud Services', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736953969/xfvrqicdlehpegbj3lif.png', category_id: 'CAT_CLOUD_SERVICES ' },
         { name: 'Gaming', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736953969/hqdgnwory2135s5gnzxf.jpg', category_id: 'CAT_GAMING' },
       ],
     },
@@ -48,7 +48,7 @@ function HomePage() {
       name: 'Education',
       subcategories: [
         { name: 'Programming Courses', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736953969/srb2cm8qviuwqsmooae6.jpg', category_id: 'CAT_COURSES_PROGRAMMING' },
-        { name: 'Language Learning', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954558/e2ewk6ym5fdne9961pbp.png',category_id: 'CAT_COURSES_LANGUAGE' },
+        { name: 'Language Learning', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954558/e2ewk6ym5fdne9961pbp.png', category_id: 'CAT_COURSES_LANGUAGE' },
         { name: 'Test Preparation', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954558/kb1usu5jbqa5ekhwwxae.png', category_id: 'CAT_TEST_PREP' },
         { name: 'Certifications', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736954558/dlbwqi69zbxcyqzjghop.png', category_id: 'CAT_COURSES_CERTIFICATIONS' }
       ],
@@ -94,19 +94,24 @@ function HomePage() {
   }, [colors.length]);
   return (
     <div className="homepage">
-     <p className="welcome-text">Welcome !!!</p>
-      <p className="explore-text">Explore the shop,</p>
-      <p className="gcr-line">
-       More efficiently using {' '}
-        <span
-          className="gcr-text"
-          // style={{
-          //   backgroundColor: colors[bgColorIndex], // Dynamic color
-          // }}
-        >
-          GCR
-        </span>
-      </p>
+      <div className='gcr-container'>
+        <div className='gcr-box'>
+          <p className="welcome-text">Welcome !!!</p>
+          <p className="explore-text">Explore the shop,</p>
+          <p className="gcr-line">
+            More efficiently using {' '}
+            <span
+              className="gcr-text"
+            >
+              GCR
+            </span>
+          </p>
+        </div>
+        <div className='photo'>
+          <img src="/Untitled design (3)[1].png" alt="" />
+        </div>
+      </div>
+
 
       {categories.map((category) => (
         <div key={category.name} className="category-block">

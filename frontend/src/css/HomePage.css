@@ -7,14 +7,14 @@
   
   .welcome-text,
   .explore-text {
-    padding-left: 50px;
+    /* padding-left: -250px; */
     font-size: 36px;
     font-weight: bold;
     /* margin: 10px 0; */
   }
   
   .gcr-line {
-    padding-left: 50px;
+    /* padding-left: -250px; */
     font-size: 36px;
     font-weight: bold;
     margin-top: -9px;
@@ -119,6 +119,12 @@
     transition: none;
   } */
   
+  .gcr-container{
+    display: flex;
+    gap: 190px;
+    justify-content: center;
+    align-items: center;
+  }
   
   /* Responsive Design */
   @media (max-width: 768px) {

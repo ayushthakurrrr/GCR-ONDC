@@ -42,7 +42,7 @@ function SearchResultsPage() {
   // Skeleton Loader
   const SkeletonLoader = () => (
     <div className="skeleton-grid">
-      {Array(12)
+      {Array(24)
         .fill(null)
         .map((_, index) => (
           <div key={index} className="skeleton-card">
