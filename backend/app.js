@@ -13,17 +13,14 @@ mongoose.connect(`${process.env.MONGODB_URI}/${process.env.MONGOBD_NAME}`)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-
 const app = express();
 
 app.use(cors());
 
-// Middleware
 app.use(bodyParser.json());
 
 // Routes
 app.use('/api/products', catalogRoutes);
 app.use('/api/sellers', sellerRoutes);
 
-// Start the Server
-app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`Backend Server running on http://localhost:${process.env.PORT}`));

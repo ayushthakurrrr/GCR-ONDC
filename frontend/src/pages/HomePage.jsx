@@ -13,16 +13,11 @@ function HomePage() {
     {
       name: 'Electronics',
       subcategories: [
-        // { name: 'Smartphones', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736950880/jciuiqt3rirdgh02oelx.avif', category_id: 'CAT_SMARTPHONES' },
         { name: 'Smartphones', img: 'https://res.cloudinary.com/dlcx4dqd1/image/upload/v1736786290/Item%20Photos/Electronics/smartphone/unfun5ljmqxrsuq2n6b1.jpg', category_id: 'CAT_SMARTPHONES' },
-        // { name: 'Laptops', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736952047/dmvj2oopegnixotxwdag.jpg', category_id: 'CAT_LAPTOPS' },
         { name: 'Laptops', img: 'https://res.cloudinary.com/dlcx4dqd1/image/upload/v1736786289/Item%20Photos/Electronics/laptops/y6tbgpmhheuzpiofrzox.jpg', category_id: 'CAT_LAPTOPS' },
         { name: 'Televisions', img: 'https://res.cloudinary.com/dlcx4dqd1/image/upload/v1736786293/Item%20Photos/Electronics/television/goql9aeoqsijf52fc2mu.jpg', category_id: 'CAT_TELEVISIONS' },
-        // { name: 'Televisions', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736951654/c0vl7teidb1yyqiyjf7x.jpg', category_id: 'CAT_TELEVISIONS' },
         { name: 'Headphones', img: 'https://res.cloudinary.com/dlcx4dqd1/image/upload/v1736786288/Item%20Photos/Electronics/Headphones/fhhfgmzf0s9zpruzlxgz.jpg', category_id: 'CAT_HEADPHONES' },
-        // { name: 'Headphones', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736951654/orxxiixctsihseqw2kdj.jpg', category_id: 'CAT_HEADPHONES' },
         { name: 'Cameras', img: 'https://res.cloudinary.com/dlcx4dqd1/image/upload/v1736786287/Item%20Photos/Electronics/cameras/iljivqbfejpzbkn18jud.jpg', category_id: 'CAT_CAMERAS' },
-        // { name: 'Cameras', img: 'https://res.cloudinary.com/dyybjybnc/image/upload/v1736951654/vxrwug30ag447kb1uwxp.jpg', category_id: 'CAT_CAMERAS' },
       ],
     },
     {
@@ -63,7 +58,6 @@ function HomePage() {
     }
   ];
 
-  // Slider settings
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -75,23 +69,10 @@ function HomePage() {
     arrows: false,
   };
 
-  // Handle category click
   const handleCategoryClick = (category_id) => {
     navigate(`/search?category=${category_id}`);
   };
 
-  const [bgColorIndex, setBgColorIndex] = React.useState(0);
-
-  // Dynamic colors for GCR
-  const colors = ['#ff007f', '#00bfff', '#ff4500', '#32cd32', '#ff1493'];
-
-  // Change GCR background color every 0.25 seconds
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setBgColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
-    }, 250);
-    return () => clearInterval(interval);
-  }, [colors.length]);
   return (
     <div className="homepage">
       <div className='gcr-container'>
@@ -111,7 +92,6 @@ function HomePage() {
           <img src="/Untitled design (3)[1].png" alt="" />
         </div>
       </div>
-
 
       {categories.map((category) => (
         <div key={category.name} className="category-block">

@@ -26,7 +26,7 @@ function SellerDetails({ seller }) {
         return `Within ${value} hours of delivery`;
       }
     }
-    return returnWindow; // Return as is if the format is unrecognized
+    return returnWindow;
   };
 
   // Handle pop-up display
@@ -37,20 +37,16 @@ function SellerDetails({ seller }) {
 
   return (
     <div className="seller-details">
-      {/* First Line: Seller Name and Discount */}
+      {/* General Section */}
       <div className="seller-summary">
         <h4>{seller.seller_name}</h4>
         <span className="discount">({discount}% off)</span>
       </div>
-
-      {/* Second Line: MRP and Selling Price */}
       <div className="seller-pricing">
         <p>
           <span className="mrp">₹{mrp}</span> ₹{sellingPrice}
         </p>
       </div>
-
-      {/* Third Line: Explore Button */}
       <div className="explore-button">
         <button onClick={() => setExpanded(!expanded)}>
           {expanded ? 'Hide Details' : 'Explore'}
@@ -66,7 +62,6 @@ function SellerDetails({ seller }) {
           <p><strong>Cancellable:</strong> {seller.fulfillment_details.cancellable ? 'Yes' : 'No'}</p>
           <p><strong>Return Window:</strong> {parseReturnWindow(seller.fulfillment_details.return_window)}</p>
 
-          {/* Buy Buttons */}
           <div className="buy-buttons">
             <button className="buy-button" onClick={handlePopup}>Buy from Here</button>
             <button className="buy-button" onClick={handlePopup}>Buy from Seller</button>

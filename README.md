@@ -1,29 +1,28 @@
 # GCR Prototype
 
-Welcome to the GCR Prototype! This project demonstrates the implementation of the **Global Catalog Registry (GCR)** in combination with seller integration, designed to improve product search and management efficiently. This documentation will guide you through the setup, features, and architecture of the project.
-
 ## Table of Contents
 - [Introduction](#introduction)
+- [Links](#links)
 - [What's our Solution](#whats-our-solution)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Project Architecture](#project-architecture)
+- [Prototype's Directory Structure](#prototypes-directory-structure)
 - [Installation](#installation)
-  - [Backend Setup](#backend-setup)
-  - [Frontend Setup](#frontend-setup)
-- [Environment Variables](#environment-variables)
 - [API Endpoints](#api-endpoints)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
 
 ## Introduction
 
-This prototype integrates GCR functionality with ONDC principles, enabling efficient search, product management, and seller integration. It includes features like:
-- A robust backend to handle product and seller data.
-- A frontend for seamless user experience, including search, product display, and seller-specific details.
+Welcome to the GCR Prototype! This project demonstrates the implementation of the **Global Catalog Registry (GCR)** in combination with seller integration, designed to improve product search and management efficiently. This documentation will guide you through the setup, features, and architecture of the project.
 
- 
+# Links
+## 1. **Demo Video**  
+🎥 [Watch the Demo Video](https://drive.google.com/file/d/175wcKoubGl3SYrSVV95i3erlAN36X0za/view?usp=sharing)
+
+## 2. **Live Deployment**  
+🌐 [Access the Deployed Application](https://thenoobs-gcr.vercel.app)
+
+---
+
 ## What's our Solution
 
 The **Global Catalog Registry (GCR)** for ONDC is designed to provide a unified and decentralized solution for product management, search, and seller integration. The core principle of this system is to store **unique products** exactly once with **static data** in the GCR, while dynamically displaying seller-specific data directly on the buyer's app. This approach ensures consistency of product data across the platform, while still allowing flexibility for sellers to manage their own product details.
@@ -102,7 +101,7 @@ This architecture enables the GCR to act as a centralized repository for static 
 ### Backend
 - **Node.js**: A JavaScript runtime used for building scalable server-side applications. It is lightweight, efficient, and enables the handling of multiple API requests concurrently.
 - **Express**: A minimal and flexible Node.js web application framework that provides robust features for web and mobile applications, simplifying routing and middleware integration.
-- **MongoDB**: A NoSQL database used to store the static product data in the GCR. It is a document-oriented database, ideal for handling large-scale data with flexibility.
+- **MongoDB**: We have used MongoDB Atlas for storing both static and dynamic details on the cloud. This enables scalable, secure, and globally distributed storage, ensuring seamless data access and high availability for the Global Catalog Registry (GCR).
 - **Mongoose**: An ODM (Object Data Modeling) library for MongoDB and Node.js, used to define models and interact with MongoDB collections in an easy-to-use manner.
 
 ### Frontend
@@ -110,11 +109,12 @@ This architecture enables the GCR to act as a centralized repository for static 
 - **Vite**: A build tool for modern web projects, designed to offer fast builds and hot module replacement for a smooth development experience.
 - **Axios**: A promise-based HTTP client for making requests from the frontend to the backend API. It is used to retrieve data and interact with the seller databases for dynamic data.
 
+### API
+- **REST APIs**: The system relies on RESTful APIs to enable communication between the GCR, seller databases, and the buyer's app, ensuring smooth data retrieval and synchronization.
+
 ### Deployment
 - **Vercel**: A platform for deploying both frontend and backend applications. It provides continuous deployment, scaling, and a seamless developer experience.
 
-### API
-- **REST APIs**: The system relies on RESTful APIs to enable communication between the GCR, seller databases, and the buyer's app, ensuring smooth data retrieval and synchronization.
 
 
 
@@ -171,51 +171,113 @@ GCR ONDC/
 └── README.md
 ```
 
+
 ## Installation
 
-### Backend Setup
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the server locally:
-   ```bash
-   npm start
-   ```
+Before you begin, make sure that you have **Node.js** version 16.x or higher installed. You can download it from [Node.js official website](https://nodejs.org/).
 
-### Frontend Setup
-1. Navigate to the frontend directory:
+### Option 1: Use Our Live Prototype
+You can directly access our prototype using the live link:
+- **[thenoobs-gcr.vercel.app](https://thenoobs-gcr.vercel.app/)**
+
+No setup is required for this option. Simply visit the link to explore the Global Catalog Registry.
+
+---
+
+### Option 2: Run the Frontend Locally and Use Hosted Backend
+In this option, you will run the frontend on your local machine, while the backend will be served from our hosted URL `https://gcr-ondc-backend.vercel.app/`. This is already set as the proxy in the `vite.config.js` file.
+
+#### Steps:
+
+1. **Navigate to the frontend directory:**
    ```bash
    cd frontend
    ```
-2. Install dependencies:
+
+2. **Install frontend dependencies:**
    ```bash
    npm install
    ```
-3. Start the development server:
+
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-## Environment Variables
+4. The app will run on `http://localhost:5173` (or the port displayed in your terminal). The frontend will communicate with the backend hosted at `https://gcr-ondc-backend.vercel.app/` automatically via the proxy configuration.
 
-Create a `.env` file in the `backend` directory with the following variables:
-```env
-MONGO_URI=<your-mongodb-connection-string>
-PORT=5000
-CORS_ORIGIN=<your-frontend-url>
-```
+---
+
+### Option 3: Run Both Frontend and Backend Locally
+If you want to run both the frontend and backend on your local machine, you need to modify the `vite.config.js` file and follow the steps below.
+
+#### Steps:
+
+1. **Backend Setup:**
+   - Navigate to the backend directory:
+     ```bash
+     cd backend
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Start the backend server locally:
+     ```bash
+     npm start
+     ```
+   - The backend will run on `http://localhost:5000` by default.
+
+2. **Frontend Setup:**
+   - Navigate to the frontend directory:
+     ```bash
+     cd frontend
+     ```
+   - Modify the `vite.config.js` file:
+     - Uncomment the `http://localhost:5000` URL:
+       ```javascript
+       export default defineConfig({
+         plugins: [react()],
+         server: {
+           proxy: {
+             '/api': {
+               // backend URL
+               target: 'http://localhost:5000',
+               // target: 'https://gcr-ondc-backend.vercel.app/',
+               changeOrigin: true,
+               secure: false,
+             },
+           },
+         },
+       });
+       ```
+     - Comment out the `https://gcr-ondc-backend.vercel.app/` URL.
+      - **Proxy Configuration**: The proxy in `vite.config.js` allows the frontend to forward API requests to the backend without CORS issues.
+   - Install frontend dependencies:
+     ```bash
+     npm install
+     ```
+
+   - Start the frontend development server:
+     ```bash
+     npm run dev
+     ```
+
+3. **Access the Application:**
+   - Open your browser and navigate to `http://localhost:5173/`.
+   - The frontend will communicate with the backend running on `http://localhost:5000`.
+
+
+---
+
+
 
 # API Endpoints
 
 ## Search APIs (For Buyers)
 These APIs are used to retrieve product details, including static and dynamic data, for buyers.
 
-### 1. **Search Products**
+### 1. **Search Products in GCR**
 **`GET /api/products/search`**  
 - **Query Parameters**:
   - `name` (optional): Search by product name (case-insensitive).
@@ -245,7 +307,6 @@ These APIs are used to add, update, and delete data in the GCR.
     "product_id": "string",
     "name": "string",
     "description": "string",
-    "mrp": "number",
     "category_id": "string",
     "attributes": { "key": "value" },
     "tags": ["string"],
@@ -253,12 +314,15 @@ These APIs are used to add, update, and delete data in the GCR.
     "sellers": [
       {
         "seller_id": "string",
-        "price": "number",
-        "stock_quantity": "number",
-        "fulfillment_details": "string"
+        "seller_name": "string",
+        "serviceable_pincodes": ["number"],
       }
     ]
   }
+- **Description**: Adds or updates a product.  
+- **Response**: Confirmation of product insertion or updation.  
+---
+
 ### 2. **Delete a Product**
 **`DELETE /api/products/:product_id`**  
 - **Path Parameters**:
@@ -284,39 +348,6 @@ These APIs are used to add, update, and delete data in the GCR.
   - `product_id`: The unique ID of the product.  
 - **Description**: Retrieves all sellers offering a specific product from the GCR.  
 - **Response**: List of sellers with their details.  
-
----
-
-### 5. **Update Catalog by Seller**
-**`PUT /api/products/:seller_id`**  
-- **Path Parameters**:
-  - `seller_id`: The unique ID of the seller.  
-- **Request Body**: Fields to update in the seller's catalog.  
-- **Description**: Updates a seller’s catalog details in the GCR.  
-- **Response**: The updated catalog details.  
-
----
-
-### 6. **Delete a Catalog by Seller**
-**`DELETE /api/products/:seller_id`**  
-- **Path Parameters**:
-  - `seller_id`: The unique ID of the seller.  
-- **Description**: Deletes the entire catalog associated with a specific seller.  
-- **Response**: Confirmation of catalog deletion.  
-
-
-
-
-# Additional Resources
-## 1. **Demo Video**  
-🎥 [Watch the Demo Video](https://example.com/demo-video)
-
-## 2. **Live Deployment**  
-🌐 [Access the Deployed Application on Vercel](https://thenoobs-gcr.vercel.app)
-
-## 3. **Presentation (PPT or PDF)**  
-📄 [See the Project's Presentation](https://example.com/project-presentation)
-
 ---
 
 Thanks for reading !

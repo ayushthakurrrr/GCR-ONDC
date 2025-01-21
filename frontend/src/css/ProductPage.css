@@ -15,7 +15,6 @@
   font-size: 15px;
 }
 
-/* Left and Right sections with individual scrollbars */
 .product-left,
 .product-right {
   width: 50%;
@@ -33,7 +32,7 @@
   margin-bottom: 5px;
   font-style: italic;
 }
-/* Styling the scrollbar */
+
 .product-left::-webkit-scrollbar,
 .product-right::-webkit-scrollbar {
   width: 8px;
@@ -45,25 +44,20 @@
   border-radius: 4px;
 }
 
-/* Hover effect for scrollbar */
 .product-left::-webkit-scrollbar-thumb:hover,
 .product-right::-webkit-scrollbar-thumb:hover {
   background-color: #004577;
 }
 
-/* Product Images Styling */
 .product-images img {
   width: auto;
-  /* height: auto; */
   max-height: 50vh;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Product Info */
 .product-info h2 {
   color: #005c99;
-  /* color: #005c99; */
   margin-bottom: 10px;
 }
 
@@ -98,7 +92,6 @@
 }
 
 
-/* Styling for array tags */
 .array-tags {
   display: flex;
   flex-wrap: wrap;
@@ -116,7 +109,7 @@
   text-transform: capitalize;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, background-color 0.3s ease;
-  margin-right: 4px; /* Add spacing for commas */
+  margin-right: 4px;
 }
 
 .attribute-tag:hover {
@@ -124,17 +117,13 @@
   background: linear-gradient(45deg, #4caf50, #005c99);
 }
 
-/* Styling for commas */
 .comma {
   color: #555;
   font-size: 16px;
-  margin-left: 4px; /* Add spacing after the comma */
-  margin-right: 4px; /* Add spacing before the next tag */
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
-
-
-/* Skeleton Loader for Static Details */
 .static-loader {
   padding: 20px;
 }
@@ -162,7 +151,6 @@
   width: 90%;
 }
 
-/* Skeleton Loader for Dynamic Details */
 .dynamic-loader {
   margin-top: 20px;
 }
@@ -170,7 +158,6 @@
 .price{
   font-size: 22px;
   font-weight: 500;
-  /* color: #005c99; */
 }
 
 .seller-placeholder {
@@ -196,7 +183,6 @@
   width: 50%;
 }
 
-/* Animation for Skeletons */
 @keyframes skeleton-animation {
   0% {
     background-color: #e0e0e0;
@@ -217,7 +203,6 @@
 }
 
 
-/* AI Description Box */
 .ai-description-box {
   display: flex;
   align-items: center;

@@ -18,14 +18,11 @@
 }
 
 .logo {
-  /* width: 120px; */
   height: 82px;
   cursor: pointer;
 }
 .logo2 {
-  /* width: 120px; */
   height: 55px;
-  /* cursor: pointer; */
 }
 
 .navbar-search {
@@ -64,7 +61,6 @@
   color: #aaa;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar-search {
     width: 80%;

@@ -71,14 +71,13 @@
 }
 
 .available {
-  color: #4caf50; /* Green for Available */
+  color: #4caf50;
 }
 
 .not-available {
-  color: #f44336; /* Red for Not Available */
+  color: #f44336;
 }
 
-/* Buy Buttons */
 .buy-buttons {
   margin-top: 20px;
   display: flex;
@@ -89,7 +88,6 @@
   background-color: #ff5722;
   color: white;
   border: none;
-  /* padding: 10px 15px; */
   padding: 9px 14px;
   border-radius: 5px;
   cursor: pointer;
@@ -100,7 +98,6 @@
   background-color: #e64a19;
 }
 
-/* Pop-Up Notification */
 .popup-notification {
   position: fixed;
   top: 95px;
@@ -115,7 +112,6 @@
   z-index: 1000;
 }
 
-/* Pop-Up Animation */
 @keyframes fadeInOut {
   0% {
     opacity: 0;

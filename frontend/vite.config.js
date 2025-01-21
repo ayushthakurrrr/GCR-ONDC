@@ -6,7 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // Your backend URL
+        // backend URL
+        // target: 'http://localhost:5000',
+        target: 'https://gcr-ondc-backend.vercel.app/',
         changeOrigin: true,
         secure: false,
       },

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
-import '../css/SearchResultsPage.css'; // Import the CSS file for styling
+import '../css/SearchResultsPage.css';
 
 function SearchResultsPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const location = useLocation(); // Track URL changes
+  const location = useLocation();
 
   // Get query parameters from URL
   const getQueryParams = () => {
@@ -24,7 +24,7 @@ function SearchResultsPage() {
 
     setLoading(true);
     axios
-      .get('https://gcr-ondc-backend.vercel.app/api/products/search', { params: { name, category } })
+      .get('/api/products/search', { params: { name, category } })
       .then((response) => {
         if (Array.isArray(response.data)) {
           setProducts(response.data);
@@ -39,7 +39,7 @@ function SearchResultsPage() {
       });
   }, [location.search]);
 
-  // Skeleton Loader
+  // Loader
   const SkeletonLoader = () => (
     <div className="skeleton-grid">
       {Array(24)

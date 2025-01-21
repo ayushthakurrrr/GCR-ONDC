@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const SellerDatabase = require('../models/SellerDatabase'); // Import the seller database model
+const SellerDatabase = require('../models/SellerDatabase');
 
 // GET dynamic product details from the seller database
 router.get('/products/:product_id', async (req, res) => {
@@ -21,7 +21,6 @@ router.get('/products/:product_id', async (req, res) => {
       .map((seller) => {
         const product = seller.products.find((p) => p.product_id === product_id);
 
-        // Return seller details only if stock_quantity is greater than 0
         if (product && product.stock_quantity > 0) {
           return {
             seller_id: seller.seller_id,
@@ -32,7 +31,7 @@ router.get('/products/:product_id', async (req, res) => {
           };
         }
       })
-      .filter(Boolean); // Remove undefined values (out-of-stock sellers)
+      .filter(Boolean);
 
     if (!dynamicDetails.length) {
       return res.status(404).json({ message: 'Product is currently out of stock with all sellers.' });

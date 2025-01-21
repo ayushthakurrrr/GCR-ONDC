@@ -9,14 +9,12 @@ function ProductPage() {
   const navigate = useNavigate();
   const { productId } = useParams();
 
-  // Static product details from GCR
   const product = location.state?.product;
 
   // State to hold dynamic details from seller database
   const [dynamicDetails, setDynamicDetails] = useState([]);
   const [dynamicLoading, setDynamicLoading] = useState(true);
 
-  // State for AI-generated description
   const [aiDescription, setAiDescription] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
 
@@ -30,7 +28,7 @@ function ProductPage() {
   useEffect(() => {
     setDynamicLoading(true);
     axios
-      .get(`https://gcr-ondc-backend.vercel.app/api/sellers/products/${productId}`)
+      .get(`/api/sellers/products/${productId}`)
       .then((response) => {
         setDynamicDetails(response.data);
         setDynamicLoading(false);

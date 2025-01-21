@@ -1,26 +1,20 @@
 .homepage {
     background-color: #f8f9fa;
     color: #333;
-    /* text-align: center; */
     padding: 30px 20px;
   }
   
   .welcome-text,
   .explore-text {
-    /* padding-left: -250px; */
     font-size: 36px;
     font-weight: bold;
-    /* margin: 10px 0; */
   }
   
   .gcr-line {
-    /* padding-left: -250px; */
     font-size: 36px;
     font-weight: bold;
     margin-top: -9px;
     margin-bottom: 40px;
-    /* margin: 20px 0; */
-    /* text-transform: uppercase; */
     color: #333;
     display: flex;
     align-items: center;
@@ -35,7 +29,6 @@
     color: #fff;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff007f, 0 0 30px #ff007f,
       0 0 40px #ff0080;
-    /* transition: background-color 0.25s ease-in-out, transform 0.2s ease-in-out; */
     animation: neon-flicker 1.5s infinite alternate;
   }
   
@@ -43,7 +36,6 @@
     transform: scale(1.05);
   }
   
-  /* Neon Flicker Effect */
   @keyframes neon-flicker {
     0%,
     19%,
@@ -114,10 +106,6 @@
     font-size: 24px;
     z-index: 1;
   }
-
-  /* .slick-track {
-    transition: none;
-  } */
   
   .gcr-container{
     display: flex;
@@ -126,7 +114,6 @@
     align-items: center;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .homepage h1 {
       font-size: 28px;
@@ -146,7 +133,6 @@
   }
   
 
- /* Custom Arrow Buttons */
 .slick-prev,
 .slick-next {
   background-color: #005c99;
@@ -176,7 +162,6 @@
   right: -10px;
 }
 
-/* Adjust for mobile screens */
 @media (max-width: 768px) {
   .slick-prev,
   .slick-next {
