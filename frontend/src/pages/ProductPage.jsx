@@ -28,7 +28,7 @@ function ProductPage() {
   useEffect(() => {
     setDynamicLoading(true);
     axios
-      .get(`/api/sellers/products/${productId}`)
+      .get(`https://gcr-ondc-backend.vercel.app/api/sellers/products/${productId}`)
       .then((response) => {
         setDynamicDetails(response.data);
         setDynamicLoading(false);
