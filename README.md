@@ -214,7 +214,7 @@ In this option, you will run the frontend on your local machine, while the backe
 ---
 
 ### Option 3: Run Both Frontend and Backend Locally
-If you want to run both the frontend and backend on your local machine, you need to modify the api link file and follow the steps below.
+If you want to run both the frontend and backend on your local machine, you need to modify the api link to `http://localhost:5000` file in ProductPage.jsx and SearchResultsPage.jsx and follow the steps below.
 
 #### Steps:
 
@@ -238,26 +238,10 @@ If you want to run both the frontend and backend on your local machine, you need
      ```bash
      cd frontend
      ```
-   - Modify the link `vite.config.js` file:
-     - Uncomment the `http://localhost:5000` URL:
-       ```javascript
-       export default defineConfig({
-         plugins: [react()],
-         server: {
-           proxy: {
-             '/api': {
-               // backend URL
-               target: 'http://localhost:5000',
-               // target: 'https://gcr-ondc-backend.vercel.app/',
-               changeOrigin: true,
-               secure: false,
-             },
-           },
-         },
-       });
-       ```
-     - Comment out the `https://gcr-ondc-backend.vercel.app/` URL.
-      - **Proxy Configuration**: The proxy in `vite.config.js` allows the frontend to forward API requests to the backend without CORS issues.
+   - Modify the api link to `http://localhost:5000` in ProductPage.jsx and SearchResults.jsx file:
+    
+  
+
    - Install frontend dependencies:
      ```bash
      npm install
