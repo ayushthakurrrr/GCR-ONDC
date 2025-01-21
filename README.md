@@ -10,10 +10,12 @@
 - [Installation](#installation)
 - [API Endpoints](#api-endpoints)
 
+---
 ## Introduction
 
 Welcome to the GCR Prototype! This project demonstrates the implementation of the **Global Catalog Registry (GCR)** in combination with seller integration, designed to improve product search and management efficiently. This documentation will guide you through the setup, features, and architecture of the project.
-
+ 
+---
 # Links
 ## 1. **Demo Video**  
 🎥 [Watch the Demo Video](https://drive.google.com/file/d/175wcKoubGl3SYrSVV95i3erlAN36X0za/view?usp=sharing)
@@ -64,6 +66,7 @@ The **Global Catalog Registry (GCR)** for ONDC is designed to provide a unified 
 
 This architecture enables the GCR to act as a centralized repository for static product data, while allowing sellers to manage their dynamic data independently. It results in a scalable and efficient system that delivers accurate product information to the buyer in real-time, while maintaining flexibility and decentralization in the marketplace.
 
+--- 
 
 ## Features
 
@@ -95,6 +98,7 @@ This architecture enables the GCR to act as a centralized repository for static 
 8. **Product Categorization**
    - Products are organized by categories to make searching and browsing easier for buyers.
 
+---
 
 ## Technologies Used
 
@@ -117,7 +121,7 @@ This architecture enables the GCR to act as a centralized repository for static 
 
 
 
-
+---
 
 ## Prototype's Directory Structure
 
@@ -171,6 +175,7 @@ GCR ONDC/
 └── README.md
 ```
 
+---
 
 ## Installation
 
